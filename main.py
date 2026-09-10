@@ -15,7 +15,14 @@ campo.send_keys("talkabit")
 
 campo.send_keys(Keys.ENTER)
 
-print("Execute a ação manual necessária no navegador...")
+if driver.find_elements(By.CLASS_NAME, "np-overlay"):
+  botao = driver.find_element(
+    By.XPATH,
+    "//div[contains(@class, 'np-overlay')]//button"
+  )
+
+  botao.click()
+
 input("Pressione [ENTER] no terminal para o Selenium continuar o script...")
 
 driver.quit()
