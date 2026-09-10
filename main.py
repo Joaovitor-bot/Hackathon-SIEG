@@ -103,8 +103,9 @@ except Exception as e:
 print(linhas)
 for elemento in linhas:
   pai = elemento.find_element(By.XPATH, "..")
-  print(pai)
-  
+  print(pai.tag_name)
+  # link = pai.find_element(By.CSS_SELECTOR, "td:nth-child(6) a").get_attribute("href")
+
 input("Faça a interação no navegador e pressione ENTER para continuar...")
 
 driver.quit()
